@@ -6,7 +6,7 @@ package pizzahut;
  * @author Official
  */
 public class setting extends javax.swing.JInternalFrame {
-
+    //
     /**
      * Creates new form setting
      */
