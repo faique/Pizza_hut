@@ -16,8 +16,8 @@ public login() {
     this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
     //con=DriverManager.getConnection("Jdbc:Odbc:pizza");
-    con = DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=database/samsung2.mdb");
-    con = DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=database/samsung.mdb");
+    con = DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=database/pizzahut.mdb");
+    
     st=con.createStatement();
     //JOptionPane.showMessageDialog(null,"Connected");
 jTextField1.grabFocus();

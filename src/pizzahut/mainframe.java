@@ -17,13 +17,15 @@ ResultSet rst;
     public mainframe() {
         initComponents();
                try{
-                 jLabel1.setText(login.uname);
+this.setExtendedState(mainframe.MAXIMIZED_BOTH);
+                    
+jLabel1.setText(login.uname);
                    Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
     //con=DriverManager.getConnection("Jdbc:Odbc:pizza");
                    con = DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=database/pizzahut.mdb");
-    /**database 2*/con = DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=database/samsung2.mdb");
+   
 jTextField1.grabFocus();
     showtabledata();
     jButton2.setEnabled(false);
@@ -35,7 +37,7 @@ jTextField1.grabFocus();
 
     public void showtabledata(){
     try{
-    String sql="select * from od";
+    String sql="select * from od where ID=?";
     PreparedStatement pst=con.prepareStatement(sql);
     rst=pst.executeQuery();
     jTable1.setModel(DbUtils.resultSetToTableModel(rst));
@@ -283,8 +285,8 @@ jTextField1.grabFocus();
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
@@ -306,7 +308,7 @@ jTextField1.grabFocus();
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -319,7 +321,7 @@ jTextField1.grabFocus();
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

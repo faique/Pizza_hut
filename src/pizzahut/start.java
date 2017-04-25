@@ -29,7 +29,7 @@ try{
      
                 Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
     //con=DriverManager.getConnection("Jdbc:Odbc:pizza");
-    con = DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=database/samsung.mdb");
+    con = DriverManager.getConnection("jdbc:odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=database/pizzahut.mdb");
     st=con.createStatement();
     }catch(Exception ex){}
     
